@@ -20,7 +20,17 @@ const encode = document.getElementById("encode");
 const decode = document.getElementById("decode");
 
 decode.addEventListener('input', function () {
-    encode.value = decodeFromBase64(decode.value);
+    try {
+        encode.value = decodeFromBase64(decode.value);
+    } catch (e) {
+        console.log('Unable to decode as UTF-8 string!');
+        try {
+            encode.value = atob(decode.value);
+        } catch (e2) {
+            console.log(e2);
+            console.log('Invalid base64 string!');
+        }
+    }
 }, false);
 
 encode.addEventListener('input', function () {
