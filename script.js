@@ -39,3 +39,19 @@ encode.addEventListener('input', function () {
     decode.classList.remove('has-error');
     decode.value = encodeToBase64(encode.value);
 }, false);
+
+
+// Copy to clipboard
+const copyEncode = document.getElementById("copy-encode")
+const copyDecode = document.getElementById("copy-decode")
+
+copyEncode.addEventListener("click", () => {
+    let value = encode.value;
+    navigator.clipboard.writeText(value);
+});
+
+
+copyDecode.addEventListener("click", () => {
+    let value = decode.value;
+    navigator.clipboard.writeText(value);
+});

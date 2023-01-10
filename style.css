@@ -39,13 +39,41 @@ body {
     font-size: 1.25em;
 }
 
+.bd-clipboard {
+    position: relative;
+    float: right;
+}
+
+.bd-clipboard+.highlight {
+    margin-top: 0;
+}
+
+.btn-clipboard {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    z-index: 10;
+    display: block;
+    padding: .25rem .5rem;
+    font-size: 75%;
+    color: #818a91;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    border-radius: .25rem;
+}
+
+.btn-clipboard:hover, .btn-clipboard:active {
+    color: #fff;
+    background-color: #35b7ff;
+}
+
 textarea {
     color: #f2edf2;
     padding: 0.75em;
     background-color: #303030;
     border-width: 0px;
     border-radius: 8px;
-    margin-top: 8px;
 }
 
 textarea:focus-visible {
