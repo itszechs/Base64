@@ -52,3 +52,7 @@ textarea:focus-visible {
     outline-color: #35b7ff;
     outline-style: solid;
 }
+
+.has-error {
+    background-color: #bc3b3b;
+}

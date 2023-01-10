@@ -21,6 +21,7 @@ const decode = document.getElementById("decode");
 
 decode.addEventListener('input', function () {
     try {
+        decode.classList.remove('has-error');
         encode.value = decodeFromBase64(decode.value);
     } catch (e) {
         console.log('Unable to decode as UTF-8 string!');
@@ -29,10 +30,12 @@ decode.addEventListener('input', function () {
         } catch (e2) {
             console.log(e2);
             console.log('Invalid base64 string!');
+            decode.classList.add('has-error');
         }
     }
 }, false);
 
 encode.addEventListener('input', function () {
+    decode.classList.remove('has-error');
     decode.value = encodeToBase64(encode.value);
 }, false);
