@@ -14,4 +14,15 @@ function decodeFromBase64(data) {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join('')
     );
-} 
+}
+
+const encode = document.getElementById("encode");
+const decode = document.getElementById("decode");
+
+decode.addEventListener('input', function () {
+    encode.value = decodeFromBase64(decode.value);
+}, false);
+
+encode.addEventListener('input', function () {
+    decode.value = encodeToBase64(encode.value);
+}, false);
